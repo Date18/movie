@@ -1,0 +1,469 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh18380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width,initial-scale=1" />\
+  <title>One Question \uc0\u10084 \u65039 </title>\
+\
+  <!-- Optional: Cute font -->\
+  <link rel="preconnect" href="https://fonts.googleapis.com">\
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">\
+\
+  <style>\
+    :root\{\
+      --bg:#0b0b14;\
+      --glass: rgba(255,255,255,.07);\
+      --stroke: rgba(255,255,255,.14);\
+      --text: rgba(255,255,255,.92);\
+      --muted: rgba(255,255,255,.72);\
+      --p1:#ff4d6d;\
+      --p2:#7c3aed;\
+      --p3:#22d3ee;\
+      --ok:#22c55e;\
+      --warn:#f59e0b;\
+    \}\
+    *\{box-sizing:border-box\}\
+    body\{\
+      margin:0;\
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial;\
+      min-height:100vh;\
+      display:flex;\
+      align-items:center;\
+      justify-content:center;\
+      background:\
+        radial-gradient(1000px 500px at 18% 10%, rgba(255,77,109,.35), transparent 60%),\
+        radial-gradient(900px 500px at 82% 18%, rgba(124,58,237,.35), transparent 55%),\
+        radial-gradient(900px 600px at 60% 90%, rgba(34,211,238,.25), transparent 60%),\
+        var(--bg);\
+      overflow:hidden;\
+      color:var(--text);\
+      padding: 22px;\
+    \}\
+    .card\{\
+      width:min(980px, 96vw);\
+      border:1px solid var(--stroke);\
+      background: var(--glass);\
+      backdrop-filter: blur(14px);\
+      border-radius: 28px;\
+      padding: 28px;\
+      box-shadow: 0 20px 70px rgba(0,0,0,.45);\
+      position:relative;\
+    \}\
+    .top\{\
+      display:flex;\
+      gap:18px;\
+      align-items:flex-start;\
+      justify-content:space-between;\
+      flex-wrap:wrap;\
+    \}\
+    h1\{\
+      margin:0;\
+      font-size: clamp(28px, 4vw, 48px);\
+      line-height:1.1;\
+      letter-spacing:-.5px;\
+      background: linear-gradient(90deg, #fff, rgba(255,255,255,.75));\
+      -webkit-background-clip:text;\
+      background-clip:text;\
+      color:transparent;\
+    \}\
+    .sub\{\
+      margin-top:10px;\
+      color:var(--muted);\
+      font-size: clamp(14px, 1.6vw, 16px);\
+      max-width: 62ch;\
+      line-height:1.55;\
+    \}\
+    .pill\{\
+      padding:10px 14px;\
+      border-radius:999px;\
+      border:1px solid var(--stroke);\
+      background: linear-gradient(90deg, rgba(255,77,109,.22), rgba(124,58,237,.22));\
+      font-weight:700;\
+      font-size: 14px;\
+      white-space:nowrap;\
+      display:flex;\
+      align-items:center;\
+      gap:8px;\
+    \}\
+    .pill span\{\
+      opacity:.8;\
+      font-weight:600;\
+    \}\
+\
+    .grid\{\
+      margin-top:18px;\
+      display:grid;\
+      grid-template-columns: 1.35fr .95fr;\
+      gap:16px;\
+    \}\
+    @media (max-width: 880px)\{\
+      .grid\{grid-template-columns: 1fr\}\
+    \}\
+\
+    .panel\{\
+      border-radius: 22px;\
+      border:1px solid var(--stroke);\
+      background: rgba(255,255,255,.05);\
+      padding: 18px;\
+      position:relative;\
+      overflow:hidden;\
+    \}\
+\
+    .hero\{\
+      padding: 18px;\
+      border-radius: 18px;\
+      border:1px solid rgba(255,255,255,.12);\
+      background:\
+        radial-gradient(600px 250px at 20% 0%, rgba(255,77,109,.22), transparent 60%),\
+        radial-gradient(600px 250px at 80% 0%, rgba(34,211,238,.18), transparent 60%),\
+        rgba(0,0,0,.18);\
+      margin-bottom: 14px;\
+    \}\
+    .question\{\
+      margin:0;\
+      font-size: clamp(18px, 2.1vw, 22px);\
+      line-height:1.45;\
+    \}\
+    .meta\{\
+      margin-top: 10px;\
+      display:flex;\
+      gap:10px;\
+      flex-wrap:wrap;\
+      color:var(--muted);\
+      font-size: 13px;\
+    \}\
+    .chip\{\
+      border:1px solid rgba(255,255,255,.14);\
+      padding: 8px 10px;\
+      border-radius: 999px;\
+      background: rgba(255,255,255,.06);\
+    \}\
+\
+    input\{\
+      width:100%;\
+      padding: 14px 14px;\
+      border-radius: 16px;\
+      border:1px solid rgba(255,255,255,.18);\
+      background: rgba(0,0,0,.25);\
+      color:white;\
+      outline:none;\
+      font-size: 15px;\
+      margin: 10px 0 12px;\
+    \}\
+\
+    .btnRow\{\
+      display:flex;\
+      gap:12px;\
+      flex-wrap:wrap;\
+      margin-top: 6px;\
+      align-items:center;\
+    \}\
+    button\{\
+      cursor:pointer;\
+      border:none;\
+      padding: 14px 18px;\
+      border-radius: 16px;\
+      font-size: 16px;\
+      font-weight: 800;\
+      transition: transform .12s ease, filter .12s ease;\
+      display:flex;\
+      align-items:center;\
+      gap:10px;\
+      user-select:none;\
+    \}\
+    button:hover\{transform: translateY(-2px); filter:brightness(1.05)\}\
+    .yes\{\
+      color:#18030a;\
+      background: linear-gradient(90deg, var(--p1), #ffb86b);\
+      box-shadow: 0 10px 30px rgba(255,77,109,.25);\
+    \}\
+    .no\{\
+      color:white;\
+      background: rgba(255,255,255,.10);\
+      border: 1px solid rgba(255,255,255,.18);\
+    \}\
+    .tiny\{\
+      margin-top:12px;\
+      font-size: 12px;\
+      color: rgba(255,255,255,.60);\
+      line-height:1.5;\
+    \}\
+\
+    .result\{\
+      margin-top: 14px;\
+      padding: 14px;\
+      border-radius: 16px;\
+      border:1px dashed rgba(255,255,255,.25);\
+      background: rgba(0,0,0,.22);\
+      display:none;\
+      line-height: 1.55;\
+    \}\
+\
+    /* Right side media */\
+    .media\{\
+      border-radius: 18px;\
+      overflow:hidden;\
+      border:1px solid rgba(255,255,255,.12);\
+      background: #000;\
+      aspect-ratio: 16/10;\
+      position:relative;\
+    \}\
+    .media img, .media video\{\
+      width:100%; height:100%;\
+      object-fit:cover; display:block;\
+      filter: contrast(1.05) saturate(1.05);\
+    \}\
+    .overlay\{\
+      position:absolute;\
+      inset:auto 12px 12px 12px;\
+      padding: 12px 12px;\
+      border-radius: 16px;\
+      border:1px solid rgba(255,255,255,.14);\
+      background: rgba(0,0,0,.35);\
+      backdrop-filter: blur(10px);\
+      font-size: 13px;\
+      color: rgba(255,255,255,.82);\
+    \}\
+    .overlay b\{color:white\}\
+\
+    /* Floating hearts */\
+    .heart\{\
+      position:absolute;\
+      bottom:-30px;\
+      font-size: 18px;\
+      opacity:.75;\
+      animation: floatUp linear forwards;\
+      filter: drop-shadow(0 10px 12px rgba(0,0,0,.35));\
+      user-select:none;\
+      pointer-events:none;\
+    \}\
+    @keyframes floatUp\{\
+      to\{ transform: translateY(-120vh) translateX(var(--drift)); opacity:0;\}\
+    \}\
+\
+    /* Confetti dots */\
+    .pop\{\
+      position:absolute;\
+      inset:0;\
+      pointer-events:none;\
+      display:none;\
+    \}\
+    .dot\{\
+      position:absolute; width:9px; height:9px; border-radius:50%;\
+      background: rgba(255,255,255,.9);\
+      animation: burst .9s ease-out forwards;\
+    \}\
+    @keyframes burst\{\
+      to\{ transform: translate(var(--x), var(--y)); opacity:0;\}\
+    \}\
+\
+    .divider\{\
+      height:1px;\
+      background: rgba(255,255,255,.12);\
+      margin: 14px 0 12px;\
+    \}\
+    a.link\{\
+      color: rgba(255,255,255,.85);\
+      text-decoration: none;\
+      border-bottom: 1px dashed rgba(255,255,255,.35);\
+    \}\
+    a.link:hover\{opacity:.9\}\
+  </style>\
+</head>\
+\
+<body>\
+  <div class="card">\
+    <div class="top">\
+      <div>\
+        <h1>Hey\'85 one tiny question \uc0\u10084 \u65039 </h1>\
+        <div class="sub">\
+          I was thinking about <b>Dhurandhar</b>\'85 and I\'92d love to watch it with you <b>today</b>. \uc0\u55356 \u57215 \u55356 \u57260 \
+          <br/>No pressure. Just vibes. Just us.\
+        </div>\
+      </div>\
+      <div class="pill">\uc0\u55357 \u56460  <span>From</span> Neelanshu</div>\
+    </div>\
+\
+    <div class="grid">\
+      <!-- Left: Interaction -->\
+      <div class="panel">\
+        <div class="hero">\
+          <p class="question">\
+            Will you go for <b>Dhurandhar</b> with me today? \uc0\u10024 \
+          </p>\
+          <div class="meta">\
+            <div class="chip">\uc0\u55357 \u56525  Your choice of theatre</div>\
+            <div class="chip">\uc0\u55357 \u56663  Evening show?</div>\
+            <div class="chip">\uc0\u55356 \u57215  Popcorn on me</div>\
+          </div>\
+        </div>\
+\
+        <label style="font-weight:700; font-size:14px; color:rgba(255,255,255,.85);">\
+          Type your name (so I know it\'92s you \uc0\u55357 \u56844 )\
+        </label>\
+        <input id="herName" placeholder="e.g., Cutie \uc0\u10084 \u65039 " />\
+\
+        <div class="btnRow">\
+          <button class="yes" id="yesBtn">Yes \uc0\u55357 \u56845 </button>\
+          <button class="no" id="noBtn">No \uc0\u55357 \u56904 </button>\
+        </div>\
+\
+        <div class="result" id="resultBox"></div>\
+\
+        <div class="divider"></div>\
+\
+        <div class="tiny">\
+          Tip: After she taps Yes/No, it gets saved in your Google Form responses.\
+          <br/>You can keep this page link private and just share it with her. \uc0\u55357 \u56470 \
+        </div>\
+\
+        <div class="pop" id="pop"></div>\
+\
+        <!-- Hidden tracking form (Google Forms) -->\
+        <form id="trackForm" target="hiddenFrame" style="display:none" method="POST">\
+          <input id="nameField"/>\
+          <input id="answerField"/>\
+        </form>\
+        <iframe name="hiddenFrame" style="display:none"></iframe>\
+      </div>\
+\
+      <!-- Right: Media -->\
+      <div class="panel">\
+        <div class="media">\
+          <!-- Replace this GIF with any cute one you like -->\
+          <img\
+            src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"\
+            alt="cute gif"\
+          />\
+          <div class="overlay">\
+            <b>Plan:</b> best seats + snacks + I\'92ll pretend I\'92m watching the movie, not you \uc0\u55357 \u56844 \
+          </div>\
+        </div>\
+\
+        <div style="margin-top:14px; color:rgba(255,255,255,.86); line-height:1.6">\
+          If you say yes, I\'92ll immediately send:\
+          <br/>\uc0\u9989  showtime options\
+          <br/>\uc0\u9989  theatre choices\
+          <br/>\uc0\u9989  pickup plan (if you want)\
+          <div class="tiny" style="margin-top:10px">\
+            Want a different theme? (pink, classy black-gold, neon blue) \'97 easy to change.\
+          </div>\
+        </div>\
+      </div>\
+    </div>\
+  </div>\
+\
+<script>\
+  /* =============================\
+     1) CONNECT GOOGLE FORM HERE\
+     =============================\
+     GOOGLE_FORM_POST_URL:\
+     - looks like: https://docs.google.com/forms/d/e/FORM_ID/formResponse\
+\
+     NAME_ENTRY_ID / ANSWER_ENTRY_ID:\
+     - looks like: entry.1234567890\
+  */\
+  const GOOGLE_FORM_POST_URL = "PASTE_GOOGLE_FORM_POST_URL_HERE";\
+  const NAME_ENTRY_ID = "entry.1111111111";\
+  const ANSWER_ENTRY_ID = "entry.2222222222";\
+\
+  const yesBtn = document.getElementById("yesBtn");\
+  const noBtn = document.getElementById("noBtn");\
+  const nameInput = document.getElementById("herName");\
+  const resultBox = document.getElementById("resultBox");\
+\
+  // Setup hidden form\
+  const form = document.getElementById("trackForm");\
+  form.action = GOOGLE_FORM_POST_URL;\
+\
+  const nameField = document.getElementById("nameField");\
+  const answerField = document.getElementById("answerField");\
+  nameField.setAttribute("name", NAME_ENTRY_ID);\
+  answerField.setAttribute("name", ANSWER_ENTRY_ID);\
+\
+  function heartsBurst(count=18)\{\
+    for(let i=0;i<count;i++)\{\
+      const h = document.createElement("div");\
+      h.className = "heart";\
+      h.textContent = ["\uc0\u10084 \u65039 ","\u55357 \u56470 ","\u55357 \u56472 ","\u55357 \u56469 ","\u10024 ","\u55358 \u57078 "][Math.floor(Math.random()*6)];\
+      h.style.left = Math.random()*100 + "vw";\
+      h.style.animationDuration = (3 + Math.random()*3) + "s";\
+      h.style.setProperty("--drift", (Math.random()*140 - 70) + "px");\
+      h.style.fontSize = (14 + Math.random()*22) + "px";\
+      document.body.appendChild(h);\
+      setTimeout(()=>h.remove(), 6500);\
+    \}\
+  \}\
+\
+  function confetti()\{\
+    const pop = document.getElementById("pop");\
+    pop.style.display = "block";\
+    pop.innerHTML = "";\
+    const dots = 34;\
+    for(let i=0;i<dots;i++)\{\
+      const d = document.createElement("div");\
+      d.className = "dot";\
+      const angle = Math.random()*Math.PI*2;\
+      const radius = 40 + Math.random()*150;\
+      d.style.left = (50 + (Math.random()*10-5)) + "%";\
+      d.style.top  = (42 + (Math.random()*10-5)) + "%";\
+      d.style.setProperty("--x", (Math.cos(angle)*radius) + "px");\
+      d.style.setProperty("--y", (Math.sin(angle)*radius) + "px");\
+      d.style.background = `hsla($\{Math.random()*360\}, 92%, 70%, .95)`;\
+      pop.appendChild(d);\
+    \}\
+    setTimeout(()=> pop.style.display="none", 1000);\
+  \}\
+\
+  function submitAnswer(answer)\{\
+    const herName = (nameInput.value || "").trim() || "Anonymous";\
+    nameField.value = herName;\
+    answerField.value = answer;\
+    try \{ form.submit(); \} catch(e) \{\}\
+  \}\
+\
+  yesBtn.addEventListener("click", () => \{\
+    heartsBurst(26);\
+    confetti();\
+    submitAnswer("Yes");\
+    resultBox.style.display = "block";\
+    const nm = (nameInput.value || "Cutie").trim();\
+    resultBox.innerHTML =\
+      `AAAA okay \uc0\u55357 \u56877 \u55357 \u56470  <b>$\{nm\}</b>, it\'92s a date!<br/>\
+       Send me a thumbs up and I\'92ll share showtime options right now. \uc0\u55356 \u57215 \u55356 \u57260 `;\
+  \});\
+\
+  // playful "No" button: wiggles away on hover/tap\
+  function dodge()\{\
+    const dx = (Math.random()*150 - 75);\
+    const dy = (Math.random()*70 - 35);\
+    noBtn.style.transform = `translate($\{dx\}px, $\{dy\}px)`;\
+  \}\
+  noBtn.addEventListener("mouseenter", dodge);\
+  noBtn.addEventListener("touchstart", dodge);\
+\
+  noBtn.addEventListener("click", () => \{\
+    heartsBurst(10);\
+    submitAnswer("No");\
+    resultBox.style.display = "block";\
+    const nm = (nameInput.value || "Cutie").trim();\
+    resultBox.innerHTML =\
+      `Okay \uc0\u55357 \u56904  <b>$\{nm\}</b>, noted.<br/>\
+       I\'92ll still be nice\'85 but I\'92m saving you a seat anyway \uc0\u55358 \u56698 \u55356 \u57215 `;\
+    noBtn.style.transform = `translate(0px, 0px)`;\
+  \});\
+\
+  // ambient hearts\
+  setInterval(()=>heartsBurst(3), 2100);\
+</script>\
+</body>\
+</html>\
+}
